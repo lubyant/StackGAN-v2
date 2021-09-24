@@ -125,7 +125,7 @@ def load_network(gpus):
     for i in range(len(netsD)):
         netsD[i].apply(weights_init)
         netsD[i] = torch.nn.DataParallel(netsD[i], device_ids=gpus)
-        # print(netsD[i])
+        # print(netsD[i])-1
     print('# of netsD', len(netsD))
 
     count = 0

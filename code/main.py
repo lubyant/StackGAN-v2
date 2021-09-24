@@ -60,8 +60,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train a GAN network')
     parser.add_argument('--cfg', dest='cfg_file',
                         help='optional config file',
-                        default='cfg/birds_proGAN.yml', type=str)
-    parser.add_argument('--gpu', dest='gpu_id', type=str, default='-1')
+                        default='cfg/birds_3stages.yml', type=str)
+    parser.add_argument('--gpu', dest='gpu_id', type=str, default='0')
     parser.add_argument('--data_dir', dest='data_dir', type=str, default='')
     parser.add_argument('--manualSeed', type=int, help='manual seed')
     args = parser.parse_args()
@@ -69,6 +69,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
+    # python main.py --cfg cfg/birds_3stages.yml --gpu 0
     args = parse_args()
     if args.cfg_file is not None:
         cfg_from_file(args.cfg_file)
